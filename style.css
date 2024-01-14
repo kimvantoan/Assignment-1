@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 body{
     position: relative;
@@ -13,18 +14,18 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-.nav-bar ul{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 34px;
-}
-.nav-bar ul li a{
-    text-decoration: none;
-    color:white;
-    font-size: 14px;
-    font-weight: 400;
+    ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 34px;
+    }
+    ul li a{
+        text-decoration: none;
+        color:white;
+        font-size: 14px;
+        font-weight: 400;
+    }
 }
 .search-icon{
     display: flex;
@@ -39,7 +40,6 @@ main{
     background-color: #474747;  
     display: flex;
     flex-direction: column;
-    
 }
 .intro{
     background-color: white;
@@ -52,8 +52,74 @@ main{
     gap: 33px;
     padding: 21px 46px ;
 }
-.main-img{
-    margin: 0 105px 85px;
+.slider{
+    margin: 0 105px 85px;   
+    width: 1300px;
+    max-width: 100vw;
+    height:557px;
+    position: relative;
+    overflow: hidden;
+    .list{
+        position: absolute;
+        width: max-content;
+        height: 100%;
+        left: 0;
+        top: 0;
+        display: flex;
+        transition: 1s;
+        img{
+            width: 1300px;
+            max-width: 100vw;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .buttons{
+        position: absolute;
+        top: 45%;
+        left: 5%;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        button{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #fff5;
+            color: #fff;
+            border: none;
+            font-family: monospace;
+            font-weight: bold;
+        }
+    }
+    .dots{
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        color: #fff;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        li{
+            list-style: none;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            margin: 10px;
+            border-radius: 20px;
+            transition: 0.5s;
+        }
+    }
+}
+.slider .dots li.active{
+    width: 30px;
+}
+@media screen and (max-width: 768px){
+    .slider{
+        height: 400px;
+    }
 }
 .list-card{
     display: flex;  
@@ -62,15 +128,25 @@ main{
     flex-wrap: wrap;
 }
 .card-news{
+    text-decoration: none;
     position: relative;
     display: flex;
     flex-direction: column;
     background-color: white;
     border-radius: 10px;
     width: 30%;
-}
-.card-news img{
-    margin: 16px 13px 34px;
+    img{
+        margin: 16px 13px 34px;
+    }
+    h1{
+        margin: 0 26px 28px;
+        color: black;
+    }
+    span{
+        margin: 0 26px 68px;
+        color: #474747;
+        font-size: 17px;
+    }
 }
 .keyword{
     display: flex;
@@ -79,14 +155,8 @@ main{
     color: #FF7A18;
     margin: 10px 26px;
 }
-.card-news h1{
-    margin: 0 26px 28px;
-}
-.card-news span{
-    margin: 0 26px 68px;
-    color: #474747;
-    font-size: 17px;
-}
+
+
 .author{
     position: absolute;
     bottom: 10px;
@@ -109,30 +179,30 @@ footer{
 .foot-title{
     font-size: 30px;
     margin: 99px 140px 60px;
-}
-.foot-title span{
-    color: white;
-}
-.foot-title a{
-    color: #0089C7;
-    text-decoration: none;
+    span{
+        color: white;
+    }
+    a{
+        color: #0089C7;
+        text-decoration: none;
+    }
 }
 .foot-info{
     display: flex;
     gap: 150px;
     margin:0 140px 50px;
-}
-.foot-menu .title{
-    color: #FF7A18;
-    font-size: 17px;
-    list-style: none;
-    text-transform: uppercase;
-}
-.foot-menu a{
-    line-height:31px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #A9A39F;
+    .title{
+        color: #FF7A18;
+        font-size: 17px;
+        list-style: none;
+        text-transform: uppercase;
+    }
+    a{
+        line-height:31px;
+        text-decoration: none;
+        font-size: 20px;
+        color: #A9A39F;
+    }
 }
 .keep-up{
     position: absolute;
@@ -142,30 +212,30 @@ footer{
     bottom: 290px;
     right: 100px;
     padding: 25px;
-}
-.keep-up h2{
-    text-transform: uppercase;
-    color: #FF7A18;
-    margin-bottom: 3px;
-}
-.keep-up p{
-    color: white;
-    margin-bottom: 26px;
-}
-.keep-up form{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 19px;
-}
-.keep-up input{
-    width: 500px;
-    padding-bottom: 20px;
-    font-size: 13px;
-}
-.keep-up button{
-    font-size: 14px;
-    background-color: #777777;
-    color: white;
-    padding: 9px 18px;
+    h2{
+        text-transform: uppercase;
+        color: #FF7A18;
+        margin-bottom: 3px;
+    }
+    p{
+        color: white;
+        margin-bottom: 26px;
+    }
+    form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 19px;
+    }
+    input{
+        width: 500px;
+        padding-bottom: 20px;
+        font-size: 13px;
+    }
+    button{
+        font-size: 14px;
+        background-color: #777777;
+        color: white;
+        padding: 9px 18px;
+    }
 }
