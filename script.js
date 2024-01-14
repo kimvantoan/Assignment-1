@@ -4,6 +4,11 @@ let next = document.getElementById('next');
 let prev = document.getElementById('prev');
 let dots = document.querySelectorAll('.slider .dots li');
 
+const searchIcon=document.querySelector('.search-icon')
+const model=document.querySelector('.model')
+const model_container=document.querySelector('.model-container')
+
+
 let lengthItems = items.length - 1;
 let active = 0;
 next.onclick = function(){
@@ -23,11 +28,8 @@ function reloadSlider(){
     dots[active].classList.add('active');
 
     clearInterval(refreshInterval);
-    refreshInterval = setInterval(()=> {next.click()}, 3000);
-
-    
+    refreshInterval = setInterval(()=> {next.click()}, 3000); 
 }
-
 dots.forEach((li, key) => {
     li.addEventListener('click', ()=>{
          active = key;
@@ -37,3 +39,13 @@ dots.forEach((li, key) => {
 window.onresize = function(event) {
     reloadSlider();
 };
+
+searchIcon.addEventListener('click',()=>{
+    model.classList.replace('d-none','d-block')
+})
+model.addEventListener('click',()=>{
+    model.classList.replace('d-block','d-none')
+})
+model_container.addEventListener('click',(event)=>{
+    event.stopPropagation()
+})

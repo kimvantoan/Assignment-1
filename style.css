@@ -35,6 +35,7 @@ body{
     height: 32px;   
     background-color: white;
     border-radius: 50%;
+    cursor: pointer;
 }
 main{
     background-color: #474747;  
@@ -237,5 +238,47 @@ footer{
         background-color: #777777;
         color: white;
         padding: 9px 18px;
+    }
+}
+.d-none{
+    display: none;
+}
+.d-block{
+    display: block;
+}
+.model{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:rgba(0, 0, 0, 0.5);
+    .model-container{ 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        padding: 34px;
+        margin: 54px;
+        .model-search{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            gap: 21px;
+            input{
+                width: 80%;
+                font-size: 20px;
+                padding:15px;
+                border: none    ;
+            }
+            button{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: white;
+                cursor: pointer;
+            }
+        }
     }
 }
