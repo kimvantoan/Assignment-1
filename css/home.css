@@ -25,6 +25,9 @@ body{
         color:white;
         font-size: 14px;
         font-weight: 400;
+        &:hover{
+            color: #FF7A18;
+        }
     }
 }
 .search-icon{
@@ -36,6 +39,10 @@ body{
     background-color: white;
     border-radius: 50%;
     cursor: pointer;
+    transition: 0.3s;
+    &:hover{
+        scale: 1.2;
+    }
 }
 main{
     background-color: #474747;  
@@ -93,34 +100,6 @@ main{
             font-weight: bold;
         }
     }
-    .dots{
-        position: absolute;
-        bottom: 10px;
-        left: 0;
-        color: #fff;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        li{
-            list-style: none;
-            width: 10px;
-            height: 10px;
-            background-color: #fff;
-            margin: 10px;
-            border-radius: 20px;
-            transition: 0.5s;
-        }
-    }
-}
-.slider .dots li.active{
-    width: 30px;
-}
-@media screen and (max-width: 768px){
-    .slider{
-        height: 400px;
-    }
 }
 .list-card{
     display: flex;  
@@ -136,6 +115,7 @@ main{
     background-color: white;
     border-radius: 10px;
     width: 30%;
+    transition: .3s;
     img{
         margin: 16px 13px 34px;
     }
@@ -148,7 +128,12 @@ main{
         color: #474747;
         font-size: 17px;
     }
+    &:hover{
+        scale: 1.02;
+        box-shadow: rgba(250, 250, 250, 0.955) 0px 5px 15px;
+    }
 }
+ j
 .keyword{
     display: flex;
     gap: 14px;
@@ -203,6 +188,9 @@ footer{
         text-decoration: none;
         font-size: 20px;
         color: #A9A39F;
+        &:hover{
+            color: white;
+        }
     }
 }
 .keep-up{
@@ -232,12 +220,14 @@ footer{
         width: 500px;
         padding-bottom: 20px;
         font-size: 13px;
+        outline: none;
     }
     button{
         font-size: 14px;
         background-color: #777777;
         color: white;
         padding: 9px 18px;
+        border: none;
     }
 }
 .d-none{
@@ -255,22 +245,71 @@ footer{
     background-color:rgba(0, 0, 0, 0.5);
     .model-container{ 
         display: flex;
-        align-items: center;
-        justify-content: center;
         background-color: black;
         padding: 34px;
-        margin: 54px;
+        width: 70%; 
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        flex-direction: column;
         .model-search{
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 80%;
+            width: 100%;
             gap: 21px;
             input{
-                width: 80%;
+                width: 90%;
                 font-size: 20px;
                 padding:15px;
-                border: none    ;
+                outline: none;
+
+            }
+            button{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: white;
+                cursor: pointer;
+                border: none;
+            }
+        }
+        li a{
+            color: white;
+            text-align: left;
+            margin: 15px;
+            list-style: none;
+            margin-top: 50px;
+            font-size: 30px;
+        }
+    }
+}.model{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:rgba(0, 0, 0, 0.5);
+    .model-container{ 
+        display: flex;
+        background-color: black;
+        padding: 34px;
+        width: 70%; 
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        flex-direction: column;
+        .model-search{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            gap: 21px;
+            input{
+                width: 90%;
+                font-size: 20px;
+                padding:15px;
+                border: none;
             }
             button{
                 width: 50px;
@@ -279,6 +318,16 @@ footer{
                 background-color: white;
                 cursor: pointer;
             }
+        }
+        li a{
+            color: white;
+            text-align: left;
+            margin: 15px;
+            display: block;
+            text-decoration: none;
+            list-style: none;
+            margin-top: 50px;
+            font-size: 30px;
         }
     }
 }
